@@ -260,7 +260,6 @@ export const topics = [
 // Gallery. Karaoke sits near the front on purpose.
 export const gallery = [
   { src: 'mespeakingatcurrentsanfran.jpg', cap: 'Kafka as the Agent Action Log, Current San Francisco', date: '2026-11' },
-  { video: 'karaoke.mp4', poster: 'karaoke.jpg', cap: 'Karaoke after the Bay Area Iceberg meetup', date: '2025-10' },
   { src: 'talkatbayareameetup.jpg', cap: 'Iceberg REST Catalog talk, Bay Area meetup', date: '2025-10' },
   { src: 'nycfirstapacheicebergmeetupspeaking.jpg', cap: 'NYC Apache Iceberg meetup at the AWS office', date: '2025-07' },
   { src: 'attheboothcurentlondon.jpg', cap: 'At the Conduktor booth, Current London', date: '2026-05' },

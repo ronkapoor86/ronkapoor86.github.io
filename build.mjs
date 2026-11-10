@@ -126,7 +126,13 @@ const galleryHtml = gallery.map((g, i) => {
 const indexBody = `
 <section class="hero">
   <h1 class="name">Ron Kapoor</h1>
-  <p class="lede">I'm a software engineer who became the technical voice of infrastructure companies: developer relations, product marketing and GTM.</p>
+  <div class="hero-row">
+    <p class="lede">I'm a software engineer who became the technical voice of infrastructure companies: developer relations, product marketing and GTM.</p>
+    <figure class="frame chops">
+      <video controls preload="none" poster="img/karaoke.jpg"><source src="img/karaoke.mp4" type="video/mp4"></video>
+      <figcaption><span class="frame-cap">Music chops</span><span class="frame-no">Karaoke after the Bay Area Iceberg meetup</span></figcaption>
+    </figure>
+  </div>
   <div class="tail" aria-hidden="true">
     <p class="tail-cmd">$ consume --topic ron.work --from-beginning</p>
     <p class="tail-out"><span data-tail>${feed[0][1]}  ${esc(feed[0][2])}</span><span class="cursor"></span></p>
@@ -179,7 +185,7 @@ ${topics.map(topicHtml).join('\n')}
     <h2>photos</h2>
     <p class="topic-n">${gallery.length} frames</p>
   </header>
-  <p class="topic-blurb">Meetups, conferences and one karaoke night. Printed in one ink; hover or tap for colour.</p>
+  <p class="topic-blurb">Meetups and conferences. Printed in one ink; hover or tap for colour.</p>
   <div class="sheet">
 ${galleryHtml}
   </div>

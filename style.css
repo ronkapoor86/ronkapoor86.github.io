@@ -72,6 +72,13 @@ button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .cursor { display: inline-block; width: 1ch; height: 1.05em; margin-left: 0.4ch; background: var(--hot); vertical-align: -0.15em; animation: blink 1.1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
+.hero-row { display: grid; grid-template-columns: minmax(0, 1fr) 34ch; gap: var(--line) 4ch; align-items: start; margin-top: var(--line); }
+.hero-row .lede { margin-top: 0; }
+.chops { margin: 0; }
+.chops figcaption { display: block; }
+.chops .frame-cap, .chops .frame-no { display: block; }
+@media (max-width: 48rem) { .hero-row { grid-template-columns: 1fr; } .chops { max-width: 34ch; } }
+
 /* Log strip: one cell per topic, echoing a partition of segments */
 .strip { display: grid; grid-template-columns: repeat(8, 1fr); margin-top: -1px; border: 1px solid var(--ink); }
 .cell { display: flex; flex-direction: column; justify-content: space-between; gap: var(--line); min-height: calc(var(--line) * 5); padding: calc(var(--line) / 2) 1ch; text-decoration: none; border-left: 1px solid var(--ink); }
