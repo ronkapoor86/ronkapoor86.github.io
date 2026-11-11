@@ -102,15 +102,16 @@ topics.forEach((t) => t.partitions.forEach((p) => p.rows.forEach((r) => feed.pus
 
 const strip = topics.map((t) => `<a class="cell" href="#${t.id}"><span class="cell-n">${topicCount(t)}</span><span class="cell-name">${t.id.replace(/-and-/g, ' + ').replace(/-/g, ' ')}</span></a>`).join('\n');
 
-const startHtml = topics.map((t) => {
-  const items = (picks[t.id] || []).map((start) => {
-    for (const p of t.partitions) {
-      const r = p.rows.find((x) => x[1].startsWith(start));
-      if (r) return r[4] ? `<li><a href="${esc(r[4])}"${linkAttrs(r[4])}>${esc(r[1])}</a></li>` : `<li>${esc(r[1])}</li>`;
+const startHtml = picks.map(([topicId, start, blurb], i) => {
+  const t = topics.find((x) => x.id === topicId);
+  for (const p of t.partitions) {
+    const r = p.rows.find((x) => x[1].startsWith(start));
+    if (r) {
+      const title = r[4] ? `<a href="${esc(r[4])}"${linkAttrs(r[4])}>${esc(r[1])}</a>` : esc(r[1]);
+      return `<li class="pick"><span class="pick-n">${pad(i + 1, 2)}</span><span class="pick-main">${title}<span class="pick-note">${esc(blurb)}</span></span><a class="pick-topic" href="#${t.id}">${t.id}</a></li>`;
     }
-    throw new Error(`pick not found: ${t.id} / ${start}`);
-  }).join('');
-  return `<div><dt><a href="#${t.id}">${t.id}</a></dt><dd><ul>${items}</ul></dd></div>`;
+  }
+  throw new Error(`pick not found: ${topicId} / ${start}`);
 }).join('\n');
 
 const galleryHtml = gallery.map((g, i) => {
@@ -126,13 +127,11 @@ const galleryHtml = gallery.map((g, i) => {
 const indexBody = `
 <section class="hero">
   <h1 class="name">Ron Kapoor</h1>
-  <div class="hero-row">
-    <p class="lede">I'm a software engineer who became the technical voice of infrastructure companies: developer relations, product marketing and GTM.</p>
-    <figure class="frame chops">
-      <video controls preload="none" poster="img/karaoke.jpg"><source src="img/karaoke.mp4" type="video/mp4"></video>
-      <figcaption><span class="frame-cap">Music chops</span><span class="frame-no">Karaoke after the Bay Area Iceberg meetup</span></figcaption>
-    </figure>
-  </div>
+  <figure class="frame chops">
+    <video controls preload="none" poster="img/karaoke.jpg"><source src="img/karaoke.mp4" type="video/mp4"></video>
+    <figcaption><span class="frame-cap">Music chops</span><span class="frame-no">Karaoke after the Bay Area Iceberg meetup. The work is below.</span></figcaption>
+  </figure>
+  <p class="lede">I'm a software engineer who became the technical voice of infrastructure companies: developer relations, product marketing and GTM.</p>
   <div class="tail" aria-hidden="true">
     <p class="tail-cmd">$ consume --topic ron.work --from-beginning</p>
     <p class="tail-out"><span data-tail>${feed[0][1]}  ${esc(feed[0][2])}</span><span class="cursor"></span></p>
@@ -157,12 +156,12 @@ ${strip}
 <section class="start" id="start-here">
   <header class="topic-head">
     <h2>start-here</h2>
-    <p class="topic-n">if you have a minute</p>
+    <p class="topic-n">five things, if you have a minute</p>
   </header>
-  <p class="topic-blurb">Cherry-picked from each topic. The full log follows.</p>
-  <dl class="picks">
+  <p class="topic-blurb">Stage, community, code, then two pieces of writing. The full log follows.</p>
+  <ol class="picks">
 ${startHtml}
-  </dl>
+  </ol>
 </section>
 
 <section class="log" id="log">
@@ -239,7 +238,7 @@ ${resumeHtml(readFileSync(new URL('./src/resume.md', import.meta.url), 'utf8'))}
 
 writeFileSync(new URL('./index.html', import.meta.url), shell({
   title: 'Ron Kapoor: product marketing, developer relations, GTM engineering',
-  desc: `Everything Ron Kapoor has shipped at Conduktor and CelerData: ${total} records across positioning, launches, writing, video, talks, community and tools.`,
+  desc: `Everything Ron Kapoor has shipped at Conduktor and CelerData: ${total} records across community, talks, writing, video, tools, launches and positioning.`,
   body: indexBody, page: 'index',
 }));
 writeFileSync(new URL('./resume.html', import.meta.url), shell({

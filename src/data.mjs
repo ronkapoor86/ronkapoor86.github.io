@@ -210,6 +210,21 @@ export const topics = [
     id: 'community',
     blurb: 'Meetups organised, conferences worked and an interview series with people who run Kafka.',
     partitions: [
+      { name: 'meetups-and-conferences', rows: [
+        ['2026-11', 'Current San Francisco 2026', 'booth, happy hour', 'k', `${K}/current-san-francisco`],
+        ['2026', 'AWS Summit New York', 'company presence', 'k', `${K}/aws-summit-nyc`],
+        ['2026-06', 'Hot Topics: Kafka NYC Meetup', 'hosted', 'k', 'https://luma.com/endxppwz'],
+        ['2026-05', 'Current London 2026', 'booth, interviews, happy hour host', 'k', 'https://luma.com/lfn5s1fn'],
+        ['2025-11-19', 'Apache Iceberg Meetup North Carolina, Raleigh', 'hosted', 'c', 'https://luma.com/4vj17iue'],
+        ['2025-11', 'Apache Iceberg Europe Community Meetup, Hamburg', 'hosted', 'c', 'https://luma.com/kdsh1zhc'],
+        ['2025-10-23', 'Seattle Apache Iceberg Community Meetup', 'hosted', 'c', 'https://luma.com/byyyrlua', 'With Google and Microsoft.'],
+        ['2025-10-01', 'Apache Iceberg Bay Area Meetup, San Francisco', 'hosted', 'c', 'https://luma.com/hbt7ahud', '688 attendees.'],
+        ['2025-09-10', 'StarRocks Summit 2025', 'hosted', 'c', YT('gK33qrF-O5I'), 'Company-wide digital summit.'],
+        ['2025-07-24', 'Apache Iceberg Meetup Atlanta', 'hosted', 'c', 'https://luma.com/vdbjh2fc', 'At the Snowflake office.'],
+        ['2025-07-10', 'NYC Apache Iceberg Community Meetup', 'co-hosted', 'c', 'https://luma.com/95a5qys1', 'The first Iceberg meetup in New York. At the AWS office, with ClickHouse among the co-hosts.'],
+        ['2025-10', 'Real-Time Data Lakes and AI Meetup, New York', 'hosted', 'c', 'https://luma.com/wbn6l47u', 'With ClickHouse.'],
+        ['2025-10', 'Open Source Analytics Festival, IBM Silicon Valley Lab', 'hosted', 'c', 'https://luma.com/wnsi90or'],
+      ]},
       { name: 'voices-of-the-kafka-community', rows: [
         ['2026-11', 'Kafka at EchoStar, with Akshara Madduluri and Shreshth Rathod', 'created, hosted', 'k', YT('s82kvdSLBhM')],
         ['2026-08', 'Optimizing Kafka Throughput at Human Security, with Adrian Woodhead', 'created, hosted', 'k', YT('HGHVShNh5cs')],
@@ -220,21 +235,6 @@ export const topics = [
         ['2026-07', 'Kafka, AI Agents, and Data Quality at LinkedIn, with Harshada Yesane', 'created, hosted', 'k', YT('IqJ_VKquXDc')],
         ['2026', 'Interview with Stephan Schiffner', 'created, hosted', 'k', YT('jkh3X5VoLvc')],
         ['2026', 'Interview with Vinzenz Halhammer', 'created, hosted', 'k', YT('sGvqFN7hoWw')],
-      ]},
-      { name: 'meetups-and-conferences', rows: [
-        ['2026-11', 'Current San Francisco 2026', 'booth, happy hour', 'k', `${K}/current-san-francisco`],
-        ['2026', 'AWS Summit New York', 'company presence', 'k', `${K}/aws-summit-nyc`],
-        ['2026-06', 'Hot Topics: Kafka NYC Meetup', 'hosted', 'k', 'https://luma.com/endxppwz'],
-        ['2026-05', 'Current London 2026', 'booth, interviews, happy hour host', 'k', 'https://luma.com/lfn5s1fn'],
-        ['2025-11-19', 'Apache Iceberg Meetup North Carolina, Raleigh', 'hosted', 'c', 'https://luma.com/4vj17iue'],
-        ['2025-11', 'Apache Iceberg Europe Community Meetup, Hamburg', 'hosted', 'c', 'https://luma.com/kdsh1zhc'],
-        ['2025-10-23', 'Seattle Apache Iceberg Community Meetup', 'hosted', 'c', 'https://luma.com/byyyrlua', 'With Google and Microsoft.'],
-        ['2025-10-01', 'Apache Iceberg Bay Area Meetup, San Francisco', 'hosted', 'c', 'https://luma.com/hbt7ahud', '700+ attendees.'],
-        ['2025-09-10', 'StarRocks Summit 2025', 'hosted', 'c', YT('gK33qrF-O5I'), 'Company-wide digital summit.'],
-        ['2025-07-24', 'Apache Iceberg Meetup Atlanta', 'hosted', 'c', 'https://luma.com/vdbjh2fc', 'At the Snowflake office.'],
-        ['2025-07-10', 'NYC Apache Iceberg Community Meetup', 'co-hosted', 'c', 'https://luma.com/95a5qys1', 'At the AWS office, with ClickHouse among the co-hosts.'],
-        ['2025-10', 'Real-Time Data Lakes and AI Meetup, New York', 'hosted', 'c', 'https://luma.com/wbn6l47u', 'With ClickHouse.'],
-        ['2025-10', 'Open Source Analytics Festival, IBM Silicon Valley Lab', 'hosted', 'c', 'https://luma.com/wnsi90or'],
       ]},
     ],
   },
@@ -250,7 +250,7 @@ export const topics = [
         ['2026-03', 'Kafka Assessment', 'wrote, built', 'k', `${K}/kafka-assessment`, 'A self-assessment that tells developers and platform teams where their Kafka practice stands.'],
         ['2026-07', 'ROI calculator', 'wrote, built', 'k', `${K}/pricing/roi`, 'Interactive calculator on the pricing page.'],
         ['2026', 'Console film toolkit', 'built', 'k', '', 'Scripts that turn product screens into short product films.'],
-        ['2026-06', 'Gateway Community quickstart', 'built', 'k', 'https://github.com/conduktor/gateway-community-quickstart', 'A one-command Docker demo of Gateway.'],
+        ['2026-06', 'Gateway Community quickstart', 'built', 'k', 'https://github.com/conduktor/gateway-community-quickstart', 'A one-command Docker demo of Gateway. 20k+ Docker Hub pulls.'],
         ['2026-08', 'GTM knowledge base', 'built', 'k', '', 'A shared reference for product names and use cases that the other tools read from.'],
       ]},
     ],
@@ -282,7 +282,7 @@ export const gallery = [
 ];
 
 // Display order, developer relations first
-const ORDER = ['technical-writing', 'video-and-demos', 'talks-and-workshops', 'community', 'tools-and-automation', 'product-launches', 'positioning-and-messaging', 'customer-stories'];
+const ORDER = ['community', 'talks-and-workshops', 'technical-writing', 'video-and-demos', 'tools-and-automation', 'product-launches', 'positioning-and-messaging', 'customer-stories'];
 topics.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
 
 // Curated order: strongest work first. Rows whose title starts with one of these move to the front, in this order.
@@ -331,14 +331,11 @@ front('tools-and-automation', 'tools', ['GTM hub', 'Video Studio', 'Blog autodra
 front('product-launches', 'launches', ['Conduktor Agents', 'Gateway Community Edition', 'Console Team Edition', 'Stream Lineage', 'Schema Registry Proxy']);
 
 
-// "Start here": a few picks per topic, matched by the start of the title
-export const picks = {
-  'technical-writing': ['The Kafka Debugging Playbook', 'The Apache Kafka Security Playbook', 'Kafka Failover Automates the Wrong Half', 'Kafka Has Rate Limits'],
-  'video-and-demos': ['Kafka Stream Lineage End to End', 'Configuration Templates Walkthrough', 'StarRocks quickstart'],
-  'talks-and-workshops': ['Kafka as the Agent Action Log', 'Iceberg REST Catalog', 'Low-Latency Apache Iceberg Queries'],
-  'community': ['Apache Iceberg Bay Area Meetup', 'NYC Apache Iceberg Community Meetup', 'Kafka, AI Agents, and Data Quality at LinkedIn', "Kafka's Role in AI Acceleration"],
-  'tools-and-automation': ['Gateway Community quickstart', 'Video Studio', 'Blog autodraft'],
-  'product-launches': ['Conduktor Agents', 'Gateway Community Edition'],
-  'positioning-and-messaging': ['Console product page', 'Gateway product page'],
-  'customer-stories': ['Coinbase', 'German automaker'],
-};
+// "Start here": five things, in order. [topic, title start, blurb]
+export const picks = [
+  ['talks-and-workshops', 'Iceberg REST Catalog', 'Gave the talk and hosted the event. Apache Iceberg Bay Area Meetup, San Francisco, 688 attendees.'],
+  ['talks-and-workshops', 'Low-Latency Apache Iceberg Queries', 'Co-founded the first Apache Iceberg meetup in New York and spoke at it. AWS office, with ClickHouse.'],
+  ['tools-and-automation', 'Gateway Community quickstart', 'A one-command Docker demo of Conduktor Gateway. 20k+ Docker Hub pulls.'],
+  ['technical-writing', 'The Apache Kafka Security Playbook', 'Long-form guide to Kafka security past TLS and ACLs.'],
+  ['technical-writing', 'The Kafka Debugging Playbook', 'Whitepaper. Six phases from alert to root cause.'],
+];
